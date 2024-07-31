@@ -1,0 +1,116 @@
+/**
+
+To Look at:
+SEEDS - maybe_seeds: Option<&[&[&[u8]]; 1]>
+
+STRINGS:  Vec<u8> over String
+.toBuffer();
+
+HASHMAP
+
+
+precog shit:
+
+Data Types I was using:
+
+#[derive(Default, Copy, Clone, AnchorSerialize, AnchorDeserialize, PartialEq)]
+pub struct Order {
+    pub num_apples: u64,       // 8
+    pub offering_apples: bool, // 1
+    pub user: Pubkey,          // 32
+    pub num_oranges: u64,      // 8
+    pub memo: u8,              // 1 - 50 total.
+}
+
+#[derive(Default, Copy, Clone, AnchorSerialize, AnchorDeserialize, PartialEq)]
+pub struct TradeRecord {
+    pub num_apples: u64,            // 8
+    pub buy_order_for_apples: bool, // 1
+    pub num_oranges: u64,           // 8
+    pub time: i64,                  // 8 - 25 total
+}
+impl TradeRecord {
+    pub const LEN: usize = 25;
+}
+
+#[account]
+#[derive(Default)]
+pub struct TradeLog {
+    pub trades: Vec<TradeRecord>,
+    pub open_time: i64,  // 8
+    pub close_time: i64, // 8
+    pub start: u32,
+}
+
+#[account]
+pub struct OrderbookPage {
+    pub list: Vec<Order>,
+    pub orderbook_id: Pubkey,
+    pub id_set: bool,
+}
+
+impl Default for OrderbookPage {
+    fn default() -> Self {
+        Self {
+            orderbook_id: Pubkey::new_unique(),
+            id_set: false,
+            list: Vec::with_capacity(MAX_SIZE),
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+*/
+
+
+/**
+
+(22 cards)
+Entomb
+Grief
+Reanimate
+Animate Dead
+Troll
+2x Target
+
+(16)
+Force of Will - with atraxa this is 23 cards for force of will. 
+Daze
+Ponder
+Brainstorm
+
+(8)
+Psychic Frog
+2x Fatal Push
+
+
+16 Lands (sometimes 15 adding some borrowers)
+(5 Duals)
+1 Undercity Sewers
+4 Underground Sea
+
+(2 basic)
+1 Swamp
+1 Island
+
+(6 fetch)
+1 Misty Rainforest
+4 Polluted Delta
+1 Floded Strand
+
+3 Wasteland
+
+
+
+
+
+
+*/
