@@ -28,8 +28,11 @@ fn main() {
     // iterating over vectors
     let mut v1 = vec![100, 32, 57];
 
-    for i in &v1 {
-        println!("{i}");
+    // Its important to iterate over a vector reference. Dont 'take ownership' of the elements of x!
+    // You can also take slices of vectors. Similar to strings.
+
+    for i in &v1[0..] {  // &v1 works in place of &v[0..]. 
+        println!("{}", *i);
     }
     // 100
     // 32
@@ -40,7 +43,7 @@ fn main() {
         *i += 50;
     }
     for i in &v1 {
-        println!("{i}");
+        println!("{i}"); // as usual people omit the *i a lot.
     }
     // 150
     // 82
@@ -60,11 +63,19 @@ fn main() {
     // lets do this with a function
     println!("The sum of elements is still: {}", vector_sum(&x));
 
+
+    // Rust obviously has If statements
+    if 5 > 0 {
+        println!("5 is posiitive");
+    } else {
+        println!("wtf is going on");
+    }
+
 }
 
 fn vector_sum(v: &Vec<i32>) -> i32 {
     let mut sum = 0;
-    for i in v {
+    for i in &v[0..] {
         sum += *i;
     }
 
