@@ -20,12 +20,19 @@ fn main() {
     let april_plus_one = plus_one(ref_z);
     let april_plus_two = plus_one(&april_plus_one);
 
+    println!("{:?}", april_plus_two);
+
     // rules:
     // At most 1 mutable reference
     // As many immutable references as desired
     // No mixing! If you have a mutable reference you cannot have any immutable ones!
 
-    println!("{:?}", april_plus_two);
+    // Some motivation
+    // fn dangle() -> &String {
+    //     let s = String::from("hello");
+    
+    //     &s
+    // }
 }
 
 fn plus_one(s: &String) -> String {
