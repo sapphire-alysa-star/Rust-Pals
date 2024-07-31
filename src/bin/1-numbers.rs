@@ -1,4 +1,5 @@
 #![allow(unused_variables)]
+#![allow(unused_mut)]
 
 // some quick notes:
 // rust has numerous number types
@@ -6,7 +7,7 @@
 fn main() {
     let mut a: u8 = 255; // 0 to 255. Important type in Solana!
 
-    // Overflows throw errors unless you run in release. Locally I can do: cargo run --bin numbers --release
+    // Overflows throw errors unless you run in release. Locally I can do: cargo run --bin 1-numbers --release
     // Solana code has the release mode behavior!
     
     // a = a + 1; // 

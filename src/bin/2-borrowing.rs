@@ -20,6 +20,11 @@ fn main() {
     let april_plus_one = plus_one(ref_z);
     let april_plus_two = plus_one(&april_plus_one);
 
+    // rules:
+    // At most 1 mutable reference
+    // As many immutable references as desired
+    // No mixing! If you have a mutable reference you cannot have any immutable ones!
+
     println!("{:?}", april_plus_two);
 }
 
