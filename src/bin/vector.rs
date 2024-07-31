@@ -94,8 +94,11 @@ Problem Set: Assume all vectors are i32. IE Vec<i32>
 
 4 - Write a fucntion that takes a reference to a Vec<i32> and returns a new vector composed of the positive entries. [-1, 0, -2, 5] -> [0, 5]
 
-6 - Write a function that takes a reference to a Vec<i32> and returns a new sorted vector of the elements. [5, 0, 2] -> [0, 2, 5]
+5 - Write a function that takes a reference to a Vec<i32> and returns a new sorted vector of the elements. [5, 0, 2] -> [0, 2, 5]
 
-7 - Write a function that takes a mutable reference to a Vec<i32> and sorts it in place! Dont copy the vector. Only swap the elements around. Function has no return.
+6 - Write a function that takes a mutable reference to a Vec<i32> and sorts it in place! Dont copy the vector. Only swap the elements around. No return value.
+
+Note: Feel free to look up 'quicksort' and implement that. Or meditate on how to sort yourself if you dont remember. Its fun. 
+Dont copy paste code of course. Look up algorithm in words.
 
 */
