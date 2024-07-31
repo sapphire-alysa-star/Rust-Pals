@@ -82,6 +82,20 @@ fn vector_sum(v: &Vec<i32>) -> i32 {
     sum
 }
 
-// Problem Set: Assume all vectors
+/*
 
-// 
+Problem Set: Assume all vectors are i32. IE Vec<i32>
+
+1 - Write a function that takes a reference to a Vec<i32> and prints out all positive numbers
+
+2 - Write a function that takes a reference to a Vec<u64> and returns the largest value. Return -1 if the vector is empty. vec.len() works btw.
+
+3 - Write a function that takes a reference to a Vec<u32> and returns the product of all its entires. Return -1 if the result overflows. Return 0 for empty vec.
+
+4 - Write a fucntion that takes a reference to a Vec<i32> and returns a new vector composed of the positive entries. [-1, 0, -2, 5] -> [0, 5]
+
+6 - Write a function that takes a reference to a Vec<i32> and returns a new sorted vector of the elements. [5, 0, 2] -> [0, 2, 5]
+
+7 - Write a function that takes a mutable reference to a Vec<i32> and sorts it in place! Dont copy the vector. Only swap the elements around. Function has no return.
+
+*/
