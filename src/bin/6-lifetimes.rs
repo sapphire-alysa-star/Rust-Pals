@@ -1,4 +1,4 @@
-#![allow(unused_variables)]
+// #![allow(unused_variables)]
 
 // this straightforward seeming function does not work.
 // fn longest(x: &str, y: &str) -> &str {
@@ -16,15 +16,15 @@ fn longest<'a> (x: &'a str, y: &'a str) -> &'a str {
     } else {
         y
     }
-} 
+}
 
-fn first_string<'a> (x: &'a str, y: &str) -> &'a str {
+fn first_string<'a> (x: &'a str, _y: &str) -> &'a str {
     x
 }
 
 fn main() {
-    let short = "";
-    let long = "long???";
+    let short = ""; // memory allocated in magical C land. When is memory safely freed?
+    let long = "long???"; // memory allocated in magical C motivation world. When is memory safely freed?
 
     let longer_string = longest(short, long);
     println!("{}", longer_string);

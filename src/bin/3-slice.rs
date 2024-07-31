@@ -1,7 +1,7 @@
 fn main() {
     let s = String::from("Hello World");
 
-    let slice: &str = &s[0..]; // type is &str
+    let slice: &str = &s[0..]; // type is &str. You can omit the explicit type. Compiler can infer its &str.
 
     println!("{:?}", slice);
 

@@ -13,7 +13,7 @@ fn main() {
     let hello = String::from("hello");
     let world = String::from("world");
 
-    let my_pair = Pair { a: &hello, b: &world };
+    let my_pair = Pair { a: &hello[0..], b: &world[0..] }; // &hello also works.
     println!("{}", my_pair.a);
 
     let b = my_pair.b;
