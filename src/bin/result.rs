@@ -1,3 +1,7 @@
+// panic! is not recoverable. 
+// Probably people 'handle errors' too much
+// But you definitely need to understand this stuff and return helpful error messages
+
 // That is, Result<T, E> could have one of two outcomes:
 
 // Ok(T): An element T was found
