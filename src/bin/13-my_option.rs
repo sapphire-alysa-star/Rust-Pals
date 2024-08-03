@@ -18,6 +18,13 @@
 //     }
 // }
 
+enum MyOption<T> {
+    MySome(T),
+    MyNone
+}
+
+
+
 fn main () {
     
 }
