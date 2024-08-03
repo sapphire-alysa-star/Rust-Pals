@@ -1,14 +1,11 @@
-Unsettled: (7)
-Error handling / panic
-Arrays
-More in iterators
-Fnmut 
-Closures
-Unsafe code blocks
+
+
+
+Interlude 2: 1
 Testing
 
 
-Lesson 3: (6)
+Lesson 3: (8)
 Generics (functions and struts)
 The lifetime rules (hard)
 Impl and self 
@@ -16,6 +13,7 @@ Custom traits
 Traits 
 Marker traits
 Orphan rules
+Put in a to_iter on the thing we make
 
 
 Lesson 4: (6)

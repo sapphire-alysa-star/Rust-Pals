@@ -1,0 +1,27 @@
+Part 1:
+1) Custom Error Message Wrapping the parseint error
+
+2) WTF is this
+fn main() -> Result<(), Box<dyn Error>> {
+    let greeting_file = File::open("hello.txt")?;
+
+    Ok(())
+}
+
+3)
+
+
+Part 2: 
+1 - 5) Crust of Rust Videos (Pick like 5)
+
+6) https://huonw.github.io/blog/2015/05/finding-closure-in-rust/ - closures from scratch
+
+7) Unsafe Rust split example - https://www.youtube.com/watch?v=9E2v8pCUc48
+
+8) 
+
+9)
+
+
+10)
+

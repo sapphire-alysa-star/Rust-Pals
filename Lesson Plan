@@ -21,17 +21,15 @@ Vectors
 
 
 Lesson 2: (prepped)
-Tuple
-Enum
-Option
-Match
-If-Let
-Impl and self 
-Generics
-Implement MyOption Class
+09 Tuple
+10 Enum + Match
+11 Option + If-Let
+12 Impl + self 
+13 Generics
+14 Implement MyOption Class
 
 
-Lesson 3: (not prepped yet)
+Lesson 3: (6)
 Self and chaining Methods
 The lifetime rules (hard)
 Custom traits
@@ -40,10 +38,11 @@ Marker traits
 Orphan rules
 
 
-Lesson 4:
+Lesson 4: (8)
 Hashmap 
 Box
 Rc
 More chats about stack vs heap
 Smart pointers in general
 ref keyword
+Results
