@@ -46,28 +46,17 @@ impl<T> MyOption<T> {
     }
 }
 
-// #[repr(C)]
-// struct MyNone<T> {
-//     _d: PhantomData<T>
-// }
-
-// impl<T> MyNone<T> {
-//     fn unwrap() -> std::option::Option<T> {
-//         None
-//     }
-// }
-
 
 fn main () {
-    let x1 = "Hello";
-    let x2 = "Celene";
+    let my_some_1 = MyOption::some("Hello");
+    let my_some_2 = MyOption::some("Celene");
+    let my_none = MyOption::none();
 
-    let my_some_1 = MyOption::some(x1);
-    let my_some_2 = MyOption::some(x2);
-
-    for i in [&my_some_1, &my_some_2] {
+    for i in [&my_some_1, &my_some_2, &my_none] {
         if i.is_some() {
             println!("{}", i.unwrap())
+        } else {
+            println!("Bad idea to unwrap a None")
         }
     }
 
