@@ -1,3 +1,11 @@
+toDo:
+-- Better explanation / understanding of lifetimes in 12-impl
+-- HW problems
+-- generic pair with lifetimes and traits?
+
+
+
+
 Lesson 1: (finished) 00-07
 Strings
 Numbers
@@ -11,6 +19,7 @@ Lifetimes and Structs
 Interlude: 08 + HW
 Vectors
 
+
 Lesson 2: (prepped)
 Tuple
 Enum
@@ -22,12 +31,12 @@ Generics
 
 
 Lesson 3: (not prepped yet)
+Self and chaining Methods
 The lifetime rules (hard)
 Custom traits
 Traits 
 Marker traits
 Orphan rules
-More about Generics and Self since harder topic
 
 
 Lesson 4:

@@ -9,18 +9,17 @@ impl<'a> Pair<'a> {
         &self.value
     }
 
-    // fn set_value(&self) -> Pair {
-    //     &self.value = value
-    // }
+    fn set_value(&mut self, value: f64) {
+        self.value = value;
+    }
 
     fn get_name(&self) -> &str {
         &self.name
     }
 
-    // fn set_name(&self, new_name: &str) -> Pair {
-    //     let copied_name = String::from(new_name);
-    //     &self.name = &copied_name[0..];
-    // }
+    fn set_name(&mut self, new_name: &'a str) {
+        self.name = new_name;
+    }
 }
 
 fn main() {
@@ -31,4 +30,13 @@ fn main() {
     };
 
     println!("Name: {}. Value: {}.", p1.get_name(), p1.get_value());
+
+    let new_name = String::from("April"); // 
+    p1.set_name(&new_name);
+    p1.set_value(512.0);
+
+    println!("Name: {}. Value: {}.", p1.get_name(), p1.get_value());
+
+    // Name: Celene. Value: -100.
+    // Name: April. Value: 512.
 }
