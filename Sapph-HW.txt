@@ -1,3 +1,24 @@
+Lesson 3: (6)
+Self and chaining Methods
+The lifetime rules (hard)
+Custom traits
+Traits 
+Marker traits
+Orphan rules
+
+
+
+Lesson 4: (8)
+Hashmap 
+Box
+Rc
+More chats about stack vs heap
+Smart pointers in general
+ref keyword
+Results
+
+
+
 Part 1:
 1) Custom Error Message Wrapping the parseint error
 
