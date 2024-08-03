@@ -25,12 +25,27 @@ fn main() {
     //        return null as T;
     //     }
     // }
-    
 
-    let x: Option<u8> = None;
+    #[derive(Debug, Clone, Copy)]
+    enum MixedData<'a> {
+        Name(&'a str),
+        Number(u8)
+    }
+
+    let x: Option<MixedData> = None;
+    let y: Option<MixedData> = Some(MixedData::Number(42));
+    let celene = Some(MixedData::Name("Celene"));
+
+    let options_to_unwrap = [&x, &y, &celene];
+
+    for opt in &options_to_unwrap {
+        if opt.is_some() {
+            println!("We can unwrap this option and get: {:?}", opt.unwrap());
+        } else {
+            println!("we avoided an error by nor unwrapping a None option and getting null");
+        }
+    }
     
-    println!("{:?}", x); // None
-    println!("{:?}", Some(42)); // Some(42)
 
 
 
@@ -61,6 +76,13 @@ fn main() {
     }
 
 
+}
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
 }
 
 
