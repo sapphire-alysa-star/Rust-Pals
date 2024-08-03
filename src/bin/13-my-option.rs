@@ -52,6 +52,12 @@ fn main () {
     let my_some_2 = MyOption::some("Celene");
     let my_none = MyOption::none();
 
+    // my_none.unwrap(); 
+    
+    // Running the Above will give the correct error
+    // thread 'main' panicked at src\bin\13-my-option.rs:26:33:
+    // Attempted to unwrap MyNone!
+
     for i in [&my_some_1, &my_some_2, &my_none] {
         if i.is_some() {
             println!("{}", i.unwrap())

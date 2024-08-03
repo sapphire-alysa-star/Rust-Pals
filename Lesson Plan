@@ -1,0 +1,39 @@
+Lesson 1: (finished) 00-07
+Strings
+Numbers
+Borrowing 
+Slices
+Automatic conversions
+Lifetimes
+Lifetimes and Structs
+
+
+Interlude: 08 + HW
+Vectors
+
+Lesson 2: (prepped)
+Tuple
+Enum
+Option
+Match
+If-Let
+Impl and self 
+Generics
+
+
+Lesson 3: (not prepped yet)
+The lifetime rules (hard)
+Custom traits
+Traits 
+Marker traits
+Orphan rules
+More about Generics and Self since harder topic
+
+
+Lesson 4:
+Hashmap 
+Box
+Rc
+More chats about stack vs heap
+Smart pointers in general
+ref keyword
