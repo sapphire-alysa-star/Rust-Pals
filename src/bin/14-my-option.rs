@@ -17,7 +17,6 @@ enum MyOption<T> {
     MySome {value: T},
     MyNone
 }
-
 impl<T> MyOption<T> {
     // method since first argument is &self
     fn unwrap(&self) -> &T {
