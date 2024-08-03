@@ -1,36 +1,30 @@
 Lesson 3: (7)
 -- Errors and Results
-Self and chaining Methods
-The lifetime rules (hard)
 -- Custom traits
 -- Traits 
 Marker traits
 Orphan rules
+Self and chaining Methods
+The lifetime rules (hard)
+[this is basically just doing some larger thing. Not hard]
 
 
-
-Lesson 4: (8)
+Lesson 4: (6)
 Hashmap 
-Box
-Rc
+Box / Rc / Smart Pointers
 More chats about stack vs heap
-Smart pointers in general
-ref keyword
-Results
 
 
 
 Part 1:
-1) Custom Error Message Wrapping the parseint error
+0) Add testing to at least ref keyword. Some others. 
 
-2) WTF is this
+1) WTF is this
 fn main() -> Result<(), Box<dyn Error>> {
     let greeting_file = File::open("hello.txt")?;
 
     Ok(())
 }
-
-3)
 
 
 Part 2: 
