@@ -1,0 +1,32 @@
+For Let
+Result
+Error handling / panic
+
+Arrays
+More in iterators
+Closures
+Tuples 
+
+Maybe never: (or let the girls figure it out)
+Fnmut
+Closures
+Unsafe code blocks
+
+Generics (functions and struts)
+The lifetime rules (hard)
+Impl and self 
+Custom traits
+Traits 
+Marker traits
+Orphan rules
+
+Box
+More chats about stack vs heap
+Smart pointers 
+
+
+Done:
+Enuns
+Options
+Match
+Tuples
