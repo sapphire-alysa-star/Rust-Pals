@@ -1,8 +1,9 @@
-Lesson 3: (6)
+Lesson 3: (7)
+-- Errors and Results
 Self and chaining Methods
 The lifetime rules (hard)
-Custom traits
-Traits 
+-- Custom traits
+-- Traits 
 Marker traits
 Orphan rules
 
