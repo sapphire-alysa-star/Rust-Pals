@@ -4,6 +4,8 @@
 
 // Options let you avoid runtime errors like v[out_of_bounds]
 
+// Note Im gonna use some arrays. 
+
 
 fn main() {
     // vec.get instead of v[]
@@ -14,7 +16,8 @@ fn main() {
 
     // Method 1: match
     println!("Method 1: Match");
-    let indices = [0, 1, 6];
+    let indices = [0, 1, 6]; // NOTE: This is an array. Works how you would guess.
+    
     for i in &indices {
         match v.get(*i) { // you need the dereference operator *
             Some(res) => {
