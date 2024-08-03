@@ -1,17 +1,14 @@
-For Let
-Result
+Unsettled: (7)
 Error handling / panic
-
 Arrays
 More in iterators
-Closures
-Tuples 
-
-Maybe never: (or let the girls figure it out)
-Fnmut
+Fnmut 
 Closures
 Unsafe code blocks
+Testing
 
+
+Lesson 3: (6)
 Generics (functions and struts)
 The lifetime rules (hard)
 Impl and self 
@@ -20,13 +17,14 @@ Traits
 Marker traits
 Orphan rules
 
+
+Lesson 4: (6)
+Hashmap 
 Box
+Rc
 More chats about stack vs heap
-Smart pointers 
+Smart pointers in general
+ref keyword
 
+Done: 0/20
 
-Done:
-Enuns
-Options
-Match
-Tuples

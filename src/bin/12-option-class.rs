@@ -1,4 +1,3 @@
-
 // What the Option class looks like:
 // class Some<T> implements Option<T> {
 //     private value: T;
