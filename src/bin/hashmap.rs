@@ -24,17 +24,33 @@ fn main () {
     let mut memo: HashMap<u64, u64> = HashMap::new();
     let mut counter = 0;
 
+    println!("dp(5) = {}. Counter: {}", dp_ladder(5, &mut memo, &mut counter), counter);
+    println!("dp(6) = {}. Counter: {}", dp_ladder(6, &mut memo, &mut counter), counter);
+    println!("dp(7) = {}. Counter: {}", dp_ladder(7, &mut memo, &mut counter), counter);
+
     for i in [5, 6, 7, 8, 18, 28] {
-        let res = dp_ladder(i, &mut memo, &mut counter);
+        let res = dp_ladder(5, &mut memo, &mut counter);
         println!("dp({i}) = {res}. Counter: {counter}");
     }
-    // Counter shows we arent accidnetally taking too many calls.
-    // We correctly comput fib(n+1)
+}
 
-    // dp(5) = 8. Counter: 7
-    // dp(6) = 13. Counter: 10
-    // dp(7) = 21. Counter: 13
-    // dp(8) = 34. Counter: 16
-    // dp(18) = 4181. Counter: 37
-    // dp(28) = 514229. Counter: 58
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        let mut memo: HashMap<u64, u64> = HashMap::new();
+        let mut counter = 0;
+
+        let num_5 = dp_ladder(5, &mut memo, &mut counter);
+        let num_8 = dp_ladder(8, &mut memo, &mut counter);
+        let num_18 = dp_ladder(18, &mut memo, &mut counter);
+        let num_28 = dp_ladder(28, &mut memo, &mut counter);
+        
+        assert_eq!(num_5, 8);
+        assert_eq!(num_8, 34);
+        assert_eq!(num_18, 4181);
+        assert_eq!(num_28, 514229);
+    }
 }
