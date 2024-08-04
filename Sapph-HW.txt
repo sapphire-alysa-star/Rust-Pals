@@ -9,7 +9,7 @@ The lifetime rules (hard)
 [this is basically just doing some larger thing. Not hard]
 
 
-Lesson 4: (6)
+Lesson 4: (3)
 Hashmap 
 Box / Rc / Smart Pointers
 More chats about stack vs heap
