@@ -17,6 +17,7 @@ fn halves_if_even(i: i32) -> Result<i32, Box<dyn Error>> {
     }
 }
 
+// we are just passing up the result for example of how this can work.
 fn do_the_thing(i: i32) -> Result<i32, Box<dyn Error>> {
     match halves_if_even(i) {
         Ok(i) => Ok(i),
