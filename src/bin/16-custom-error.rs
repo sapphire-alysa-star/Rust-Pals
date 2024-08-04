@@ -73,3 +73,25 @@ fn main() {
     // Error: Issue with variable: 1. number too large to fit in target type
     // Error: WrappedError { error: ParseIntError { kind: PosOverflow }, variable: 1 }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_one() {
+        // note: you basically cannot construct your own ParseIntError. Not getting into it.
+        let error_string_1 = String::from("Err(WrappedError { error: ParseIntError { kind: InvalidDigit }, variable: 0 })");
+        let res_string_1 = format!("{:?}", multiply("t", "2"));
+
+        assert_eq!(error_string_1, res_string_1);
+    }
+
+    #[test]
+    fn test_two() {
+        let error_string_2 = String::from("Err(WrappedError { error: ParseIntError { kind: PosOverflow }, variable: 1 })");
+        let res_string_2 = format!("{:?}", multiply("50", "100000000000000000000000"));
+
+        assert_eq!(error_string_2, res_string_2);
+    }
+}
