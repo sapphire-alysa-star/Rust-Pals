@@ -38,6 +38,18 @@ Traits
 Marker traits
 Orphan rules
 
+NEED:
+a - Little class with traits, impl, trait bounds, lifetimes
+
+b - Include write up the orphan and lifetime rules
+
+c - function trait bounds as well
+
+d - HW week 2.
+
+e - put together week 3
+
+
 
 Lesson 4: (8)
 Hashmap 
@@ -46,4 +58,3 @@ Rc
 More chats about stack vs heap
 Smart pointers in general
 ref keyword
-Results

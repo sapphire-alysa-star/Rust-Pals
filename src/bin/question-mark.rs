@@ -4,7 +4,7 @@
 // Err(Box::from("Not even!")) has type Box<dyn std::error::Error>
 // I will use a declarion to shorten std::error::Error to Error
 // A box puts something 'on the heap' so its around without an owner
-// dyn means 'dynamic dispatch'.
+// dyn means 'dynamic dispatch'. It annotates a trait. So this is a box of a 'thing that has the error trait'
 // More on this stuff later.
 
 use std::error::Error;
