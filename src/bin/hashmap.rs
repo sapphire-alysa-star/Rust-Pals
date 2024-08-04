@@ -47,10 +47,22 @@ mod tests {
         let num_8 = dp_ladder(8, &mut memo, &mut counter);
         let num_18 = dp_ladder(18, &mut memo, &mut counter);
         let num_28 = dp_ladder(28, &mut memo, &mut counter);
-        
-        assert_eq!(num_5, 8);
-        assert_eq!(num_8, 34);
-        assert_eq!(num_18, 4181);
-        assert_eq!(num_28, 514229);
+
+        let res_5 = 8;
+        let res_8 = 34;
+        let res_18 = 4181;
+        let res_28 = 514229;
+
+        assert_eq!(num_5, res_5, "fifth number was {}, it should be {}", num_5, res_5);
+        assert_eq!(num_8, res_8, "eighth number was {}, it should be {}", num_8, res_8);
+        assert_eq!(num_18, res_18, "18th number was {}, it should be {}", num_18, res_18);
+        assert_eq!(num_28, res_28, "28th number was {}, it should be {}", num_28, res_28);
+
+        // What an error looks like:
+        // assertion `left == right` failed: 28th number was 317811, it should be 514229
+        // left: 317811
+        // right: 514229
+
+        // It doesnt really matter how you test but testing is important.
     }
 }
