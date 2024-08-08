@@ -27,27 +27,28 @@ Lesson 2: (prepped)
 12 Impl + self 
 13 Generics
 14 Implement MyOption Class
+15-result
+16-custom-error
 
 
-Lesson 3: (7)
-Errors and Result
-Self and chaining Methods
-The lifetime rules (hard)
-Custom traits
-Traits 
-Marker traits
-Orphan rules
+Lesson 3:
+17-Trait Bounds
+18-more-traits
+19-hashmap
+20-question-mark
+21-review and the lifetime rules
+X - how tests works covered in a few sections
 
-NEED:
-a - Little class with traits, impl, trait bounds, lifetimes
-
-b - Include write up the orphan and lifetime rules
-
-c - function trait bounds as well
-
-d - HW week 2.
-
-e - put together week 3
+Lesson 4: This is the real one baby
+Memory
+Stack vs Heap
+C basics
+Cpp RAII
+unique_ptr
+shared_ptr
+Box
+RC
+Arc
 
 
 

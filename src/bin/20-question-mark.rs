@@ -33,9 +33,3 @@ fn main () -> Result<(), Box<dyn Error>> {
 
     Ok(())
 }
-
-// fn do_the_thing(i: i32) -> Result<i32, Error> {
-//     let i = halves_if_even(i)?;
-
-//     // use `i`
-// }
