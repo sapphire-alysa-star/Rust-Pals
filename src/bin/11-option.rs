@@ -6,6 +6,11 @@
 
 // Note Im gonna use some arrays. 
 
+// enum Option<T> {
+//     Some(T),
+//     None
+// }
+
 
 fn main() {
     // vec.get instead of v[]

@@ -15,7 +15,7 @@ fn main() {
     let sapph = MixedData::Name { first: "Sapphire", last: "Star" };
     let unit_type = MixedData::Unit;
 
-    for item in [&num, &pair, &sapph, &unit_type] {
+    for item in [&num, &pair, &sapph, &unit_type] { // this is an array
         println!("Debug Works fine: {:?}: ", item);
     }
     // Prints:
@@ -26,7 +26,7 @@ fn main() {
 
 
     // lets format this ourselves with match:
-    for item in [&num, &pair, &sapph, &unit_type] {
+    for item in [&num, &pair, &sapph, &unit_type] { // [&MixedData, 4];
         match *item {
             MixedData::Name {first, last} => println!("First name: {first}, Last: {last}"),
             MixedData::Number(num) => println!("Number Variant: {num}"),

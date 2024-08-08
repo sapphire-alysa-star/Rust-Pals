@@ -5,6 +5,7 @@ struct Pair<'a> {
 
 // impl of Val
 impl<'a> Pair<'a> {
+    // member funciton iff first variable is &self or &mut self
     fn get_value(&self) -> &f64 {
         &self.value
     }
@@ -19,6 +20,11 @@ impl<'a> Pair<'a> {
 
     fn set_name(&mut self, new_name: &'a str) {
         self.name = new_name;
+    }
+
+    // first variable does not refer to self. So this is called as Pair::not_a_member_function
+    fn not_a_member_function() -> String {
+        String::from("Not a member funciton")
     }
 }
 
@@ -39,4 +45,6 @@ fn main() {
 
     // Name: Celene. Value: -100.
     // Name: April. Value: 512.
+
+    println!("{}", Pair::not_a_member_function());
 }
