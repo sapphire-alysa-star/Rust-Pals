@@ -16,3 +16,9 @@ fn main() {
 
     println!("{}, {}", x.get_value(), y.get_value());
 }
+
+
+// Some and None
+// is_some, is_none - tell which it is
+// enum type
+// unwrap

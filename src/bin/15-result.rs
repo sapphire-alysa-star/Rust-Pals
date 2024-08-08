@@ -36,6 +36,6 @@ fn main() {
     print(twenty);
 
     // The following now provides a much more helpful error message.
-    let tt = multiply("20000000000000000000000000000000", "2");
+    let tt = multiply("t", "2");
     print(tt);
 }

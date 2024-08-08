@@ -7,7 +7,7 @@ struct WrappedError {
     variable: u16,
 }
 
-// Display is a Trait. We are writing a custom implementation. 
+// Display is a Trait. We are writing a custom implementation.
 impl fmt::Display for WrappedError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Write into the supplied output tream: `f`.
