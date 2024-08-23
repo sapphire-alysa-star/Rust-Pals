@@ -88,11 +88,11 @@ Problem Set: Assume all vectors are i32. IE Vec<i32>
 
 1 - Write a function that takes a reference to a Vec<i32> and prints out all positive numbers
 
-2 - Write a function that takes a reference to a Vec<u32> and returns the largest value. Return -1 if the vector is empty. vec.len() works btw.
+2 - Write a function that takes a reference to a Vec<u32> and returns the largest value. Return -1 if the vector is empty. vec.len() works btw. Return an i64.
 
-3 - Write a function that takes a reference to a Vec<u32> and returns the product of all its entires. Return -1 if the result overflows. Return 0 for empty vec.
+3 - Write a function that takes a reference to a Vec<u32> and returns the product of all its entires. Return -1 if overflows. Return an i64.
 
-4 - Write a fucntion that takes a reference to a Vec<i32> and returns a new vector composed of the positive entries. [-1, 0, -2, 5] -> [0, 5]
+4 - Write a fucntion that takes a reference to a Vec<i32> and returns a new vector composed of the non-negative entries. [-1, 0, -2, 5] -> [0, 5]
 
 5 - Write a function that takes a reference to a Vec<i32> and returns a new sorted vector of the elements. [5, 0, 2] -> [0, 2, 5]
 

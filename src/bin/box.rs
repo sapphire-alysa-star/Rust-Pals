@@ -31,9 +31,9 @@
 // Given this, I don't think there's a clear way to say which pointer is the normal pointer. I don't think the reference is more "fundamental" than the box.
 
 fn boxed_int () -> Box<i32> {
-    let i: i32 = 7;
+    let i: i32 = 6;
 
-    Box::new(i)
+    return Box::new(i)
 }
 
 fn main () {

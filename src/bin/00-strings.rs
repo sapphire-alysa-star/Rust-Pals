@@ -17,8 +17,9 @@ fn main() {
     let f1 = "Celene";
     let f2 = "Ichi";
     let f3 = "Isha";
+    let f4 = "Cleffa";
 
-    println!("Rust Pals: {}, {}, {}, {}", f0, f1, f2, f3);
+    println!("Rust Pals: {}, {}, {}, {}, {}", f0, f1, f2, f3, f4);
 }
 
 // nothing here should be confusing. 
