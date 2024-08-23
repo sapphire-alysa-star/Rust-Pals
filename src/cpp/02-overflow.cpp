@@ -7,12 +7,6 @@
 #include <iostream>
 #include <stack>
 
-char* pointy() {
-    char* p = new char[6];
-
-    return p;
-}
-
 int main() {
     const int num_bytes = 8192*1024; 
     // const int num_bytes = 8192*1024; // This version Always triggers a seg fault memory error.
