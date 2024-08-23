@@ -23,4 +23,13 @@ fn main () {
 
     println!("address of x: {:?}", raw_pointer); // no Display
 
+    // You can actually hardcode memory addresses and insist content is an i32 if you want.
+    let address = 0x012345usize;
+    let hardcoded = address as *const i32;
+
+    println!("address of hardcoded pointer: {:?}", hardcoded); 
+
+    // variable x: 5
+    // address of x: 0x7ffe39edfd94
+    // address of hardcoded pointer: 0x12345
 }
