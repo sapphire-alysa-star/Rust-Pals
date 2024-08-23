@@ -1,15 +1,3 @@
-// int main() {
-//     const int num_bytes = 8192*1024; 
-
-//     // char chars[num_bytes]; // The max num_bytes I can use is not consistent on my machine. -- SEG FAULT HERE
-
-//     char* chars = new char[num_bytes];       // Request memory for the variable. No seg faults here!
-
-//     std::fill(chars, chars + num_bytes, '0'); // You dont actually need this line. But wanted to show they are filled.
-
-//     return 0;
-// }
-
 #![allow(dead_code)]
 
 use std::mem::size_of_val;
@@ -35,5 +23,18 @@ fn main() {
     // Memory size of array in kb: 8100. Plus 0 extra bytes.
 }
 
+// C++ Version:
+
+// int main() {
+//     const int num_bytes = 8192*1024; 
+
+//     // char chars[num_bytes]; // The max num_bytes I can use is not consistent on my machine. -- SEG FAULT HERE
+
+//     char* chars = new char[num_bytes];       // Request memory for the variable. No seg faults here!
+
+//     std::fill(chars, chars + num_bytes, '0'); // You dont actually need this line. But wanted to show they are filled.
+
+//     return 0;
+// }
 
 

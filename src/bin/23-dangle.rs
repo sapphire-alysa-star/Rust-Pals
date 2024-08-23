@@ -1,27 +1,3 @@
-// int* dangle() {
-//     int x = 5;
-//     int* p;
-
-//     p = &x;
-
-//     cout << "variable x has address: " << p << endl;
-
-//     return p;
-// }
-
-
-// int main() {
-
-//     int* p = dangle();
-
-//     cout << "dangling pointer address: " << p << endl;
-//     cout << "dereference p to get: " << *p << endl;
-
-//     // dereference p to get: 32619 . -- undefined but does not error on my machine in cpp land.
-
-//     return 0;
-// }
-
 fn dangle (val: i32) -> *const i32 {
     let x: i32 = val;
 
@@ -52,4 +28,28 @@ fn main() {
     // The value should be 7, but of course its -538107904
 }
 
-// 
+// C++ version:
+
+// int* dangle() {
+//     int x = 5;
+//     int* p;
+
+//     p = &x;
+
+//     cout << "variable x has address: " << p << endl;
+
+//     return p;
+// }
+
+
+// int main() {
+
+//     int* p = dangle();
+
+//     cout << "dangling pointer address: " << p << endl;
+//     cout << "dereference p to get: " << *p << endl;
+
+//     // dereference p to get: 32619 . -- undefined but does not error on my machine in cpp land.
+
+//     return 0;
+// }
