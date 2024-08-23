@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
 int main() {
     int x; 
@@ -7,7 +8,7 @@ int main() {
     x = 5;
     p = &x; // p points to x
 
-    printf("variable x: %d\n", x);
+    cout << "variable x: " << x << endl;
 
     printf("address of x: %p\n", p);  
 
