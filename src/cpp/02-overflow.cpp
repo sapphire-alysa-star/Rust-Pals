@@ -20,7 +20,7 @@ int main() {
     // char chars[num_bytes]; // The max num_bytes I can use is not consistent on my machine. -- SEG FAULT HERE
 
     // char* chars  = NULL;         // Pointer initialized with null
-    char* chars = new char[num_bytes];       // Request memory for the variable
+    char* chars = new char[num_bytes];       // Request memory for the variable. No seg faults here!
 
     std::fill(chars, chars + num_bytes, '0'); // You dont actually need this line. But wanted to show they are filled.
 
