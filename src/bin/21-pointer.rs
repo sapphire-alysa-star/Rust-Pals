@@ -32,4 +32,14 @@ fn main () {
     // variable x: 5
     // address of x: 0x7ffe39edfd94
     // address of hardcoded pointer: 0x12345
+
+
+    // You need to be in an unsafe block to deference a raw pointer.
+    unsafe {
+        println!("Checking we get the same x value with deference. x = {}", *raw_pointer);
+        // println!("This line will error if you run it. hardcocded = {}", *hardcoded);
+
+        // Checking we get the same x value with deference. x = 5
+        // Segmentation fault
+    }
 }
