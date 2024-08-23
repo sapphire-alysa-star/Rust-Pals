@@ -6,6 +6,8 @@ using namespace std;
 class String
 {
     public:
+        char* _text {nullptr};
+
         String(const char* ch)
         {
             size_t sizeOfText = strlen(ch) + 1; // +1 to account for trailing NULL
@@ -30,9 +32,6 @@ class String
             // so we can check things actually work
             cout << this->_text << endl;
         }
-
-    private:
-        char* _text {nullptr};
 };
 
 int main()
