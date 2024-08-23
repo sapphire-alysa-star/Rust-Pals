@@ -10,7 +10,7 @@ int main() {
 
     cout << "variable x: " << x << endl;
 
-    printf("address of x: %p\n", p);  
+    cout << "address of x: " << p << endl;  
 
     return 0;
 }
