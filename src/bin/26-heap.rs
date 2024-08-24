@@ -9,8 +9,6 @@ use std::alloc::{alloc, Layout};
 use std::slice::from_raw_parts_mut;
 
 const LENGTH: usize = 8192*1024*10; // 10x my abailable stack memory in bytes.
-const ALIGN: usize = 134217728; // this is a power of 2 larger than LENGTH.
-
 
 fn stack_overflow() -> Box<[u8; LENGTH]> {
 
