@@ -1,10 +1,15 @@
 // Box and unique_pointer are extremely similar. 
 
+// So lets look at putting stuff on the heap. And some manual memory allocation!
+
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
+use std::alloc::{alloc, Layout};
+use std::slice::from_raw_parts_mut;
 
 const LENGTH: usize = 8192*1024*10; // 10x my abailable stack memory in bytes.
+const ALIGN: usize = 134217728; // this is a power of 2 larger than LENGTH.
 
 
 fn stack_overflow() -> Box<[u8; LENGTH]> {
@@ -24,43 +29,33 @@ fn big_box(val: u8, length: usize) -> Box<[u8]> {
     // This is surely the best plan but maybe we can do it more directly for learning.
 }
 
+fn big_allocation(val: u8, length: usize) -> Box<[u8]> {
+
+    unsafe {
+        let layout = Layout::array::<u8>(length).unwrap();
+        let p = alloc(layout);
+
+        for i in 0..length {
+            *p.wrapping_add(i) = val;
+        }
+
+        let slice = from_raw_parts_mut(p, length);
+
+        Box::<[u8]>::from_raw(slice as *mut [u8])
+    }
+    
+}
+
 fn main() {
 
     // stack_overflow(); 
     // this stack overflows as you might guess
 
-    let boxed_slice_1: Box<[u8]> = vec![0; LENGTH].into_boxed_slice();
+    let boxed_slice_1 = big_box(5, LENGTH);
+    println!("Boxxed Slice One has first element {} and length {}", boxed_slice_1[0], boxed_slice_1.len());
+    // Boxxed Slice One has first element 5 and length 83886080
 
-    let boxed_slice_2 = big_box(7, LENGTH);
-
-    println!("Boxxed Slice Two has first element {} and length {}", boxed_slice_2[0], boxed_slice_2.len());
-    // Boxxed Slice Two has first element 7 and length 83886080
-
-
-    // let mut b = Vec::with_capacity(LENGTH);
-    // b.extend(std::iter::repeat(v).take(1000));
-    // b.into_boxed_slice().try_into().unwrap();
-
+    let boxed_slice_2 = big_allocation(7, LENGTH + 920);
+    println!("Boxxed Slice Two has 99th element {} and length {}", boxed_slice_2[99], boxed_slice_2.len());
+    // Boxxed Slice Two has 99th element 7 and length 83887000
 }
-
-// fn main() {
-//     const MAX_STACK_BYTES: usize = 8192*1024; 
-
-//     // Rust is truly amazingly poorly implemented and allocating directly with Box does NOT work lol.
-//     // let boxed_array = Box::new([0 as u8; 10*MAX_STACK_BYTES]); 
-// }
-
-//     // // I have approximately 8192 KB of stack memory.
-//     // const NUM_BYTES: usize = 8192*1024; // to use as array size you need a const. const must be typed. usize is correct type.
-//     // const LESS_BYTES: usize = 8100*1024;
-
-//     // // let too_big: [u8; NUM_BYTES] = [0; NUM_BYTES];
-//     // // thread 'main' has overflowed its stack
-//     // // fatal runtime error: stack overflow
-//     // // Aborted
-
-//     // let array: [u8; LESS_BYTES] = [0; LESS_BYTES]; // -- does not break on my machine.
-//     // let mem_size_in_bytes = size_of_val(&array);
-
-//     // let kilo_bytes = mem_size_in_bytes / 1024;
-//     // let extra_bytes = mem_size_in_bytes % 1024;
