@@ -1,40 +1,11 @@
-// Box and unique_pointer are extremely similar. 
-
-// So lets look at putting stuff on the heap. And some manual memory allocation!
-
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
 use std::alloc::{alloc, Layout};
 use std::slice::from_raw_parts_mut;
 use std::time::SystemTime;
-use std::ptr::copy_nonoverlapping;
 
 const LENGTH: usize = 8192*1024*10; // 10x my abailable stack memory in bytes.
-
-// From elem actually faster for specifically u8???
-// impl SpecFromElem for u8 {
-//     #[inline]
-//     fn from_elem<A: Allocator>(elem: u8, n: usize, alloc: A) -> Vec<u8, A> {
-//         if elem == 0 {
-//             return Vec { buf: RawVec::with_capacity_zeroed_in(n, alloc), len: n };
-//         }
-//         let mut v = Vec::with_capacity_in(n, alloc);
-//         unsafe {
-//             ptr::write_bytes(v.as_mut_ptr(), elem, n);
-//             v.set_len(n);
-//         }
-//         v
-//     }
-// }
-
-fn big_box(val: u32, length: usize) -> Box<[u32]> {
-    let boxed_slice: Box<[u32]> = vec![val; length].into_boxed_slice();
-
-    boxed_slice
-
-    // This is surely the best plan but maybe we can do it more directly for learning.
-}
 
 fn big_allocation(val: u32, length: usize) -> Box<[u32]> {
 
@@ -43,13 +14,8 @@ fn big_allocation(val: u32, length: usize) -> Box<[u32]> {
         let p: *mut u8 = alloc(layout);
         let p32 = p as *mut u32;
 
-        // this loop is very slow sadly. But you know whatever. For learning.
-        // for i in 0..length {
-        //     *p.wrapping_add(i) = val;
-        // }
-
         let slice = from_raw_parts_mut(p32, length);
-        slice.fill(val); // this is 5x faster but still slower than vec!
+        slice.fill(val); // no loop sorry.
 
         Box::<[u32]>::from_raw(slice as *mut [u32])
 
@@ -77,4 +43,10 @@ fn main() {
     // for u32 they run in the same time! Though variance. sometimes either wins the race
     // Time elapsed to run vec! version: Ok(423.783211ms)
     // Time elapsed to run alloc version: Ok(435.575445ms)
+}
+
+fn big_box(val: u32, length: usize) -> Box<[u32]> {
+    let boxed_slice: Box<[u32]> = vec![val; length].into_boxed_slice();
+
+    boxed_slice
 }
