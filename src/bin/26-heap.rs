@@ -40,6 +40,9 @@ fn big_allocation(val: u8, length: usize) -> Box<[u8]> {
         let slice = from_raw_parts_mut(p, length);
 
         Box::<[u8]>::from_raw(slice as *mut [u8])
+
+        // p as used above is a thin pointer. Its 'just' a memory address with a type.
+        // *mut [u8] is a 'fat pointer'. It stores both a length and an address. As well as being typed.
     }
     
 }
