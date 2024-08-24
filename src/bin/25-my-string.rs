@@ -1,4 +1,7 @@
-
+struct MyString {
+    length: usize,
+    bytes: [u8]
+}
 
 
 fn main() {
