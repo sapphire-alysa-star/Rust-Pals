@@ -24,7 +24,6 @@ fn main() {
 }
 
 // C++ Version:
-
 // int main() {
 //     const int num_bytes = 8192*1024; 
 
