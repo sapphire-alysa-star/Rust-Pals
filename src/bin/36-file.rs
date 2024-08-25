@@ -1,6 +1,7 @@
-use std::fs::{read, File};
+use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
+use std::fs::read_to_string;
 
 static LOREM_IPSUM: &str =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -13,7 +14,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 fn read_file() {
     // Create a path to the desired file
-    let path = Path::new("./src/data/hello.txt"); // I am running this from rust pals root!
+    let path = Path::new("./src/data/wish.txt"); // I am running this from rust pals root!
     let display = path.display();
 
     // Open the path in read-only mode, returns `io::Result<File>`
@@ -49,8 +50,25 @@ fn write_file() {
     }
 }
 
+fn concat_lines(filename: &str) -> String {
+    let mut result = String::new();
+
+    for line in read_to_string(filename).unwrap().lines() {
+        if result.len() > 0 {
+            result.push(' ');
+        }
+
+        result.push_str(line);
+    }
+
+    result
+}
+
 fn main() {
     read_file();
 
     write_file();
+
+    let lyrics_1 = concat_lines("./src/data/wish.txt");
+    println!("{}", lyrics_1);
 }
