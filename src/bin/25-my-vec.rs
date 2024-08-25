@@ -5,14 +5,17 @@ use std::alloc::{self, Layout};
 
 use std::option::Option;
 
-pub struct MyVec<T> {
+pub struct MyVec<T> 
+where 
+    T: Copy
+{
     ptr: *mut T,
     cap: usize,
     len: usize,
 }
 
 impl<T> MyVec<T> 
-where
+where 
     T: Copy
 {
     pub fn new() -> Self {
@@ -107,6 +110,21 @@ where
     }
 }
 
+impl<T> Drop for MyVec<T> 
+where 
+    T: Copy
+{
+    fn drop(&mut self) {
+        if self.cap != 0 {
+            while let Some(_) = self.pop() { }
+            let layout = Layout::array::<T>(self.cap).unwrap();
+            unsafe {
+                alloc::dealloc(self.ptr as *mut u8, layout);
+            }
+        }
+    }
+}
+
 
 
 fn main() {
@@ -116,6 +134,8 @@ fn main() {
         my_vec.push(i);
     }
 
+    my_vec.set(99, 255);
+
     println!(
         "Length: {}. First Element: {}. 50th element: {}. Last Element: {}", 
         my_vec.len, 
@@ -124,7 +144,7 @@ fn main() {
         my_vec.get(99).unwrap()
     );
 
-    for i in 0..5 {
+    for _i in 0..5 {
         let val = my_vec.pop().unwrap();
 
         println!("Popped off: {}", val);
