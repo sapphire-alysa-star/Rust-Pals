@@ -74,12 +74,18 @@ fn main() {
     println!("Ref Count: {}", reference_count);
     // Ref Count: 3
 
-    for i in 0..10000 {
+    for _i in 0..10000 {
         i1.increment_via_pointer();
         i1.increment_via_rc();
         i2.increment_via_pointer();
         i2.increment_via_rc();
     }
+
+    i1.print_via_rc();
+    i1.print_via_pointer();
+    i2.print_via_rc();
+    i2.print_via_pointer();
+
 
     // Count via safe rust: 40000
     // Count via pointer: 40000
