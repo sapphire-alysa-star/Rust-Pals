@@ -1,21 +1,20 @@
-use std::mem;
 use std::ptr;
 use std::alloc::{self, Layout};
 
 use std::option::Option;
 
-pub struct Vec<T> {
+pub struct MyVec<T> {
     ptr: *mut T,
     cap: usize,
     len: usize,
 }
 
-impl<T> Vec<T> 
+impl<T> MyVec<T> 
 where
     T: Copy
 {
     pub fn new() -> Self {
-        Vec {
+        Self {
             ptr: ptr::null_mut(),
             len: 0,
             cap: 0,
@@ -70,7 +69,7 @@ where
 
         let offset = self.len - 1;
 
-        self.len - 1;
+        self.len -= 1;
         
         unsafe {
             return Some(*self.ptr.wrapping_add(offset))
@@ -109,6 +108,27 @@ where
 
 
 fn main() {
+    let mut my_vec: MyVec<u8> = MyVec::new();
+
+    for i in 0..100 {
+        my_vec.push(i);
+    }
+
+    println!(
+        "Length: {}. First Element: {}. 50th element: {}. Last Element: {}", 
+        my_vec.len, 
+        my_vec.get(0).unwrap(), 
+        my_vec.get(49).unwrap(),
+        my_vec.get(99).unwrap()
+    );
+
+    for i in 0..5 {
+        let val = my_vec.pop().unwrap();
+
+        println!("Popped off: {}", val);
+    }
+    println!("New Length: {}", my_vec.len);
+
 
 }
 
