@@ -1,4 +1,3 @@
-use std::cell::Cell;
 use std::cell::RefCell; // A RefCell is a single-threaded RwLock (not mutex). 
 use std::rc::Rc; // you can use methods of a value directly!
 
@@ -81,7 +80,7 @@ fn main() {
 
     i2.increment_via_pointer();
     i2.increment_via_rc();
-    i1.print_via_rc();
+    i2.print_via_rc();
     i2.print_via_pointer();
 
     // Count via safe rust: 2
