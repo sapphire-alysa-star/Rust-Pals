@@ -6,13 +6,14 @@ fn main() {
     // This variable declaration is where its value is specified.
 
     let data = vec![1, 2, 3];
+    let second_data = vec![4, 5, 6];
 
     // move converts any variables captured by reference or mutable reference to variables captured by value.
     let closure = move || println!("captured {data:?} by value");
     closure();
 
-
     // data is no longer available, it is owned by the closure
+    println!("{:?}", second_data); // second data however is not captured
 
     let apple = Arc::new("the same apple");
 

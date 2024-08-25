@@ -1,29 +1,61 @@
-use std::error::Error;
-use std::fs;
-use std::io::Read;
-use std::path::Path;
-use std::{thread, time};
 use std::sync::mpsc;
+use std::thread;
+use rand;
+use std::time::Duration;
+
 
 fn main() {
-    let (tx, rx) = mpsc::channel::<String>();
+    let (tx, rx) = mpsc::channel();
 
-    let files = ["foo.txt", "bar.txt", "baz.txt"];
+    let tx1 = tx.clone();
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("--- A"),
+            String::from("--- B"),
+            String::from("--- C"),
+            String::from("--- D"),
+            String::from("--- E"),
+        ];
 
-    thread::scope(|scope| {
-        for file in files {
-            scope.spawn(move || {
-                let contents = fs::read_to_string(file);
-                // ...
-            });
+        for val in vals {
+            tx1.send(val).unwrap();
+            let duration = rand::random::<u8>();
+            thread::sleep(Duration::from_millis(duration as u64));
         }
     });
 
-    // Receive messages from the channel
+    thread::spawn(move || {
+        let vals = vec![
+            String::from("Never"),
+            String::from("wanna"),
+            String::from("give"),
+            String::from("you"),
+            String::from("up!")
+        ];
+
+        for val in vals {
+            tx.send(val).unwrap();
+            let duration = rand::random::<u8>();
+            thread::sleep(Duration::from_millis(duration as u64));
+        }
+    });
+
+    // this will not return until all the senders are dropped. So dont clone tx an extra time!
     for received in rx {
-        println!("Got: {:?}", received);
+        println!("{received}");
     }
 }
+
+// --- A
+// Never
+// wanna
+// --- B
+// --- C
+// give
+// --- D
+// --- E
+// you
+// up!
 
 // Common Prejudice Against Threads
 
