@@ -21,15 +21,17 @@
     let p1 = &mut s as *mut i32;
     let p2 = &mut s as *mut i32;
 
+    let p3 = std::ptr::addr_of_mut!(s);
+
     unsafe {
         *p1 += 1;
         *p2 += 1;
+        *p3 += 1;
     }
 
     println!("Value of s: {}", s);
-    // Value of s: 2
- }
-
+    // Value of s: 3
+}
 
 fn main() {
     borrow_checker();
