@@ -8,7 +8,7 @@
 use std::alloc::{alloc, Layout};
 use std::slice::from_raw_parts_mut;
 
-const LENGTH: usize = 8192*1024*10; // 10x my abailable stack memory in bytes.
+const LENGTH: usize = 8192*1024*10; // 10x my available stack memory in bytes.
 
 fn stack_overflow() -> Box<[u8; LENGTH]> {
 
@@ -42,7 +42,7 @@ fn big_allocation(val: u8, length: usize) -> Box<[u8]> {
         Box::<[u8]>::from_raw(slice as *mut [u8])
 
         // p as used above is a thin pointer. Its 'just' a memory address with a type.
-        // *mut [u8] is a 'fat pointer'. It stores both a length and an address. As well as being typed.
+        // *mut [u8] is a 'enhanced pointer'. It stores both a length and an address. As well as being typed.
     }
     
 }
