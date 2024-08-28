@@ -13,6 +13,56 @@ macro_rules! multiply_add {
     ($a:expr, $b:expr, $c:expr) => { $a * ($b + $c) };
 }
 
+macro_rules! vec_strs {
+    (
+        // Start a repetition:
+        $(
+            // Each repeat must contain an expression...
+            $element:expr
+        )
+        // ...separated by commas...
+        ,
+        // ...zero or more times.
+        *
+    ) => {
+        // Enclose the expansion in a block so that we can use
+        // multiple statements.
+        {
+            let mut v = Vec::new();
+
+            // Start a repetition:
+            $(
+                // Each repeat will contain the following statement, with
+                // $element replaced with the corresponding expression.
+                v.push(format!("{}", $element));
+            )*
+
+            v
+        }
+    };
+}
+
+// both variables must repeat same number of time. No seperator.
+macro_rules! two_sum {
+    (
+        $($i1:ident)*, 
+        $($i2:ident)*
+    ) => {
+        {
+            let mut s1 = 0;
+            let mut s2 = 0;
+
+            $(
+                s1 += $i1;
+                s2 += $i2;
+            )*
+
+            (s1, s2)
+        }
+        // $( let $i: (); let $i2: (); )*
+    }
+}
+
 fn main() {
     let world = S!("World");
 
@@ -23,6 +73,17 @@ fn main() {
     let ten = multiply_add!(2, 2, 3);
 
     println!("Hello, {}! Four: {} - {} - {}. Ten: {}", world, f1, f2, f3, ten);
+
+    let vec_string = vec_strs!("Hello", "Wise", "and", "Powerful", "Cleffa", 7);
+
+    println!("{:?}", vec_string);
+
+    let (a, b, c, x, y, z) = (1, 2, 3, 4, 5, 6);
+
+    let ts = two_sum!(a b c, x y z);
+
+    println!("Two sums: {:?}", ts);
+
 }
 
 
